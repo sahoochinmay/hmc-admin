@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Dashboard",
+    "url": "/home/"
+  },
+  {
+    "name": "Invoice",
+    "url": "/home/ticket"
+  }
+]

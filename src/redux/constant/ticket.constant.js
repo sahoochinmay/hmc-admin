@@ -1,0 +1,2 @@
+export const FETCH_TICKET = 'FETCH_TICKET'
+export const RELOAD_TICKET = 'RELOAD_TICKET'
