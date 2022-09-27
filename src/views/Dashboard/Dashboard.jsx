@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Paper,
-  Backdrop,
-  CircularProgress,
-  Grid,
-} from "@material-ui/core";
+import { Box, Paper, Backdrop, CircularProgress, Grid } from "@material-ui/core";
 import { ticketRef } from "../../config/firebase";
 
 const Dashboard = () => {
@@ -25,12 +19,12 @@ const Dashboard = () => {
         <Backdrop style={{ zIndex: "1000", color: "#fff" }} open={false}>
           <CircularProgress color="inherit" />
         </Backdrop>
-        <h1>Auto Vision Services</h1>
+        <h1>Hotel MasterChef</h1>
       </Box>
       <Grid container spacing={3}>
         <Grid item xs={4}>
           <Paper style={{ padding: "10px" }}>
-            <h2>Total Customers</h2>
+            <h2>Total Orders</h2>
             <p>{count}</p>
           </Paper>
         </Grid>

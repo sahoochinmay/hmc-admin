@@ -1,15 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  CssBaseline,
-  Avatar,
-  Button,
-  TextField,
-  Container,
-  Box,
-  Typography,
-  CircularProgress,
-  Backdrop,
-} from "@material-ui/core";
+import { CssBaseline, Avatar, Button, TextField, Container, Box, Typography, CircularProgress, Backdrop } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { LockOutlined } from "@material-ui/icons";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,8 +10,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <a color="inherit" href="http://www.motowheel.online/" target="_blank">
-        Auto Vision Services
+      <a color="inherit" href="http://www.hotelmasterchef.online/" target="_blank">
+        Hotel MasterChef
       </a>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -59,10 +49,12 @@ const Auth = (props) => {
   const { isLoggedIn } = useSelector((state) => state.authReducer);
   // methods
   const handleSignIn = () => {
-    dispatch(authSignIn({
-      email:email,
-      password: password
-    }));
+    dispatch(
+      authSignIn({
+        email: email,
+        password: password,
+      })
+    );
   };
   // check user loggedin or not to change route
   useEffect(() => {
@@ -80,7 +72,7 @@ const Auth = (props) => {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <h3>Auto Vision Services</h3>
+        <h3>Hotel MasterChef</h3>
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
@@ -108,14 +100,7 @@ const Auth = (props) => {
             autoComplete="current-password"
             onChange={(e) => set_password(e.target.value)}
           />
-          <Button
-            type="button"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={handleSignIn}
-          >
+          <Button type="button" fullWidth variant="contained" color="primary" className={classes.submit} onClick={handleSignIn}>
             SIGN IN
           </Button>
         </form>

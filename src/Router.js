@@ -1,27 +1,16 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import {
-  Drawer,
-  AppBar,
-  CssBaseline,
-  Toolbar,
-  List,
-  Typography,
-  Divider,
-  IconButton,
-  Menu,
-  MenuItem,
-} from "@material-ui/core";
+import { Drawer, AppBar, CssBaseline, Toolbar, List, Typography, Divider, IconButton, Menu, MenuItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { ChevronLeft, PowerSettingsNew,FiberManualRecord } from "@material-ui/icons";
+import { ChevronLeft, PowerSettingsNew, FiberManualRecord } from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
 import { MainListItems } from "./layouts/ListItems";
 import { Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { authSignOut } from "./redux/action/auth.action";
 // components
-import {Dashboard, Invoice, Ticket} from "./views/index";
-import profileImage from './assets/images/profile.jpg'
+import { Dashboard, Invoice, Ticket, Food } from "./views/index";
+import profileImage from "./assets/images/profile.jpg";
 import { AddTicket, EditTicket, TicketDetails } from "./views/Ticket/components";
 
 // function Copyright() {
@@ -66,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     }),
     // background: "rgb(235,42,42)",
     // background:
-      // "linear-gradient(90deg, rgba(235,42,42,1) 8%, rgba(186,55,187,1) 52%, rgba(0,172,255,1) 100%)",
+    // "linear-gradient(90deg, rgba(235,42,42,1) 8%, rgba(186,55,187,1) 52%, rgba(0,172,255,1) 100%)",
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -150,15 +139,15 @@ const Router = (props) => {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
-  const {user, isLoggedIn } = useSelector((state) => state.authReducer);
+  const { user, isLoggedIn } = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
   //   role for divison
   // const role = "admin";
   //   check auth
-  // if (!isLoggedIn) {
-  //   props.history.push("/");
-  //   return <p>Pleasae Login</p>;
-  // }
+  if (!isLoggedIn) {
+    props.history.push("/");
+    return <p>Pleasae Login</p>;
+  }
   const handleDrawerOpen = () => {
     if (open) {
       setOpen(false);
@@ -183,39 +172,18 @@ const Router = (props) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
-        position="absolute"
-        className={clsx(classes.appBar, open && classes.appBarShift)}
-      >
+      <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            className={clsx(classes.menuButton)}
-          >
+          <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={handleDrawerOpen} className={clsx(classes.menuButton)}>
             <MenuIcon />
           </IconButton>
-          <Typography
-            component="h1"
-            variant="h6"
-            color="inherit"
-            noWrap
-            className={classes.title}
-          >
-            Auto Vision Services
+          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+            Hotel MasterChef
           </Typography>
           <IconButton onClick={handleSignOutClick} color="inherit">
             <PowerSettingsNew />
           </IconButton>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleSignOutClose}
-          >
+          <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleSignOutClose}>
             <MenuItem onClick={handleSignOut}>Logout</MenuItem>
           </Menu>
         </Toolbar>
@@ -234,9 +202,9 @@ const Router = (props) => {
         </div>
         <Divider />
         {open && (
-          <div className={classes.profileDiv} >
+          <div className={classes.profileDiv}>
             <img src={profileImage} alt="" className={classes.imgDiv} />
-              <FiberManualRecord className={classes.status} />
+            <FiberManualRecord className={classes.status} />
             <small
               style={{
                 margin: "5px 0",
@@ -251,8 +219,8 @@ const Router = (props) => {
         <List>
           <MainListItems />
         </List>
-        <Divider />
-        <Divider style={{ marginBottom: "180px" }} />
+        {/* <Divider /> */}
+        {/* <Divider style={{ marginBottom: "180px" }} /> */}
         {/* {open && <CopyRight className={classes.copyRightOpen} />} */}
       </Drawer>
       <main className={classes.content}>
@@ -265,6 +233,7 @@ const Router = (props) => {
             <Route exact path="/home/ticket/edit" component={EditTicket} />
             <Route exact path="/home/ticket/detail" component={TicketDetails} />
             <Route exact path="/home/invoice" component={Invoice} />
+            <Route exact path="/home/foods" component={Food} />
           </>
         </Switch>
       </main>

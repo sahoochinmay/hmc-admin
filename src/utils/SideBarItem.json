@@ -1,10 +1,14 @@
 [
   {
     "name": "Dashboard",
-    "url": "/home/"
+    "url": "/home"
   },
   {
     "name": "Invoice",
     "url": "/home/ticket"
+  },
+  {
+    "name": "Foods",
+    "url": "/home/foods"
   }
 ]
