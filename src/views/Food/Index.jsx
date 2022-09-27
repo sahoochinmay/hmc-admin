@@ -136,6 +136,7 @@ const Index = () => {
       });
   };
   const deleteFood = async (id) => {
+    console.log(id)
     dispatch(loadingStart());
     foodsRef
       .doc(id)
