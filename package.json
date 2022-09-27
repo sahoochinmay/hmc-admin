@@ -1,6 +1,6 @@
 {
-  "name": "auto-vision-services",
-  "homepage": "http://www.motowheel.online/",
+  "name": "Hotel MasterChef",
+  "homepage": "https://hotelmasterchef.github.io/admin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "firebase": "^8.4.2",
+    "gh-pages": "^4.0.0",
     "material-table": "^1.69.3",
     "moment": "^2.29.1",
     "react": "^17.0.2",
@@ -33,7 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ignore-pattern node_modules/"
+    "lint": "eslint . --ignore-pattern node_modules/",
+    "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
