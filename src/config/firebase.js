@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
-import 'firebase/database'; // If using Firebase database
+import 'firebase/auth';  // If using Firebase storage
+import 'firebase/firestore'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
 
 const firebaseConfig = {
