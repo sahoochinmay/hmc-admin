@@ -17,4 +17,4 @@ export const db = firebase.firestore();
 export const storage = firebase.storage();
 export const ticketRef = db.collection("Ticket");
 
-export const foodsRef = db.collection("Foods");
+export const foodsRef = db.collection("Food");

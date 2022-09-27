@@ -8,7 +8,7 @@ import {persistReducer } from 'redux-persist'
 import authReducer from './auth.reducer'
 import globalReducer from './global.reducer'
 import ticketReducer from "./ticket.reducer"
-const reducers =persistReducer({storage: storage,key:'rootssssssss' }, combineReducers({
+const reducers =persistReducer({storage: storage,key:'hmc1' }, combineReducers({
   authReducer,
   globalReducer,
   ticketReducer

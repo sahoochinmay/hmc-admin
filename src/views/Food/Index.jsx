@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Modal,
@@ -17,6 +17,11 @@ import {
 import { Delete, Add, Edit } from "@material-ui/icons";
 import MaterialTable from "material-table";
 import { makeStyles } from "@material-ui/core/styles";
+import { useGlobalContext } from "../../contextApi/Context";
+import { v4 } from "uuid";
+import { foodsRef } from "../../config/firebase";
+import { loadingEnd, loadingStart, showAlert } from "../../redux/action/global.action";
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -43,11 +48,90 @@ const useStyles = makeStyles((theme) => ({
 
 const Index = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const [addModal, setAddModal] = useState(false);
   const [add_name, setAdd_name] = useState("");
   const [add_url, setAdd_url] = useState("");
   const [add_type, setAdd_type] = useState("");
   const [add_price, setAdd_price] = useState("");
+  const { foods, setFoods } = useGlobalContext();
+  useEffect(() => {
+    fetchFood();
+  }, []);
+
+  const fetchFood = async () => {
+    dispatch(loadingStart());
+    let arr = [];
+    foodsRef
+      .get()
+      .then((docs) => {
+        docs.forEach((doc) => {
+          arr.push(doc.data());
+        });
+        setFoods([...arr]);
+        dispatch(loadingEnd());
+      })
+      .catch((err) => {
+        dispatch(
+          showAlert({
+            type: "error",
+            msg: err.message,
+          })
+        );
+        dispatch(loadingEnd());
+      });
+  };
+  const addFood = async () => {
+    if (add_name === "" || add_url === "" || add_type === "" || add_price === "") {
+      dispatch(
+        showAlert({
+          type: "error",
+          msg: "Please enter all mandatory fields.",
+        })
+      );
+      return;
+    }
+    setAddModal(false);
+    dispatch(loadingStart());
+    let id = v4();
+    foodsRef
+      .doc(id)
+      .set({
+        _id: id,
+        name: add_name,
+        image: add_url,
+        size: add_type,
+        price: add_price,
+      })
+      .then((docs) => {
+        dispatch(
+          showAlert({
+            type: "success",
+            msg: "😄 Food added successfully.",
+          })
+        );
+        dispatch(loadingEnd());
+        setFoods([
+          ...foods,
+          {
+            _id: id,
+            name: add_name,
+            image: add_url,
+            size: add_type,
+            price: add_price,
+          },
+        ]);
+      })
+      .catch((err) => {
+        dispatch(
+          showAlert({
+            type: "error",
+            msg: err.message,
+          })
+        );
+        dispatch(loadingEnd());
+      });
+  };
   return (
     <div
       style={{
@@ -76,7 +160,7 @@ const Index = () => {
           { title: "Size", field: "size" },
           { title: "Price", field: "price" },
         ]}
-        data={[]}
+        data={foods}
         components={{
           Action: (props) => {
             switch (props?.action?.icon) {
@@ -204,12 +288,12 @@ const Index = () => {
                 <Input
                   id="standard-adornment-amount"
                   value={add_price}
-                  onChange={(e) => setAdd_price(e.target.value)}
+                  onChange={(e) => setAdd_price(e.target.value.replace(/[^0-9]/g,''))}
                   startAdornment={<InputAdornment position="start">₹</InputAdornment>}
                 />
               </FormControl>
               <FormControl component="fieldset" style={{ marginTop: "20px" }}>
-                <FormLabel component="legend">Type</FormLabel>
+                <FormLabel component="legend">Size</FormLabel>
                 <RadioGroup aria-label="type" name="type" value={add_type} onChange={(e) => setAdd_type(e.target.value)}>
                   <FormControlLabel value="Half" control={<Radio color="primary" />} label="Half" />
                   <FormControlLabel value="Full" control={<Radio color="primary" />} label="Full" />
@@ -220,7 +304,7 @@ const Index = () => {
               <Button variant="contained" onClick={() => setAddModal(false)} color="secondary">
                 Cancel
               </Button>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={() => addFood()}>
                 Save
               </Button>
             </div>
