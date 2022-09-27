@@ -49,12 +49,15 @@ const useStyles = makeStyles((theme) => ({
 const Index = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  // NOTE: add
   const [addModal, setAddModal] = useState(false);
   const [add_name, setAdd_name] = useState("");
   const [add_url, setAdd_url] = useState("");
   const [add_type, setAdd_type] = useState("");
   const [add_price, setAdd_price] = useState("");
   const { foods, setFoods } = useGlobalContext();
+  // NOTE: delete
+  const [deleteModal, setDeleteModal] = useState(false);
   useEffect(() => {
     fetchFood();
   }, []);
@@ -121,6 +124,30 @@ const Index = () => {
             price: add_price,
           },
         ]);
+      })
+      .catch((err) => {
+        dispatch(
+          showAlert({
+            type: "error",
+            msg: err.message,
+          })
+        );
+        dispatch(loadingEnd());
+      });
+  };
+  const deleteFood = async (id) => {
+    dispatch(loadingStart());
+    foodsRef
+      .doc(id)
+      .delete()
+      .then((docs) => {
+        dispatch(
+          showAlert({
+            type: "success",
+            msg: "😄 Ticket removed successfully.",
+          })
+        );
+        dispatch(loadingEnd());
       })
       .catch((err) => {
         dispatch(
@@ -235,10 +262,7 @@ const Index = () => {
           {
             icon: "delete",
             tooltip: "Delete Food",
-            onClick: (event, rowData) => {
-              // handleOpen();
-              // setServerToDelete(rowData);
-            },
+            onClick: (event, rowData) => {},
           },
         ]}
         options={{
@@ -288,7 +312,7 @@ const Index = () => {
                 <Input
                   id="standard-adornment-amount"
                   value={add_price}
-                  onChange={(e) => setAdd_price(e.target.value.replace(/[^0-9]/g,''))}
+                  onChange={(e) => setAdd_price(e.target.value.replace(/[^0-9]/g, ""))}
                   startAdornment={<InputAdornment position="start">₹</InputAdornment>}
                 />
               </FormControl>
