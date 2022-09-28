@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/hmc-admin/static/css/main.a919d2ef.chunk.css",
+    "main.js": "/hmc-admin/static/js/main.ab061f1e.chunk.js",
+    "main.js.map": "/hmc-admin/static/js/main.ab061f1e.chunk.js.map",
+    "runtime-main.js": "/hmc-admin/static/js/runtime-main.aea6b924.js",
+    "runtime-main.js.map": "/hmc-admin/static/js/runtime-main.aea6b924.js.map",
+    "static/css/2.97094cdd.chunk.css": "/hmc-admin/static/css/2.97094cdd.chunk.css",
+    "static/js/2.9ba84855.chunk.js": "/hmc-admin/static/js/2.9ba84855.chunk.js",
+    "static/js/2.9ba84855.chunk.js.map": "/hmc-admin/static/js/2.9ba84855.chunk.js.map",
+    "static/js/3.cb9503a6.chunk.js": "/hmc-admin/static/js/3.cb9503a6.chunk.js",
+    "static/js/3.cb9503a6.chunk.js.map": "/hmc-admin/static/js/3.cb9503a6.chunk.js.map",
+    "static/js/4.176edec3.chunk.js": "/hmc-admin/static/js/4.176edec3.chunk.js",
+    "static/js/4.176edec3.chunk.js.map": "/hmc-admin/static/js/4.176edec3.chunk.js.map",
+    "static/js/5.800a944e.chunk.js": "/hmc-admin/static/js/5.800a944e.chunk.js",
+    "static/js/5.800a944e.chunk.js.map": "/hmc-admin/static/js/5.800a944e.chunk.js.map",
+    "static/js/6.341d99a6.chunk.js": "/hmc-admin/static/js/6.341d99a6.chunk.js",
+    "static/js/6.341d99a6.chunk.js.map": "/hmc-admin/static/js/6.341d99a6.chunk.js.map",
+    "index.html": "/hmc-admin/index.html",
+    "static/css/2.97094cdd.chunk.css.map": "/hmc-admin/static/css/2.97094cdd.chunk.css.map",
+    "static/css/main.a919d2ef.chunk.css.map": "/hmc-admin/static/css/main.a919d2ef.chunk.css.map",
+    "static/js/2.9ba84855.chunk.js.LICENSE.txt": "/hmc-admin/static/js/2.9ba84855.chunk.js.LICENSE.txt",
+    "static/js/3.cb9503a6.chunk.js.LICENSE.txt": "/hmc-admin/static/js/3.cb9503a6.chunk.js.LICENSE.txt",
+    "static/js/4.176edec3.chunk.js.LICENSE.txt": "/hmc-admin/static/js/4.176edec3.chunk.js.LICENSE.txt",
+    "static/js/5.800a944e.chunk.js.LICENSE.txt": "/hmc-admin/static/js/5.800a944e.chunk.js.LICENSE.txt",
+    "static/media/banner.40cdce9b.png": "/hmc-admin/static/media/banner.40cdce9b.png",
+    "static/media/profile.f5240ef5.jpg": "/hmc-admin/static/media/profile.f5240ef5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aea6b924.js",
+    "static/css/2.97094cdd.chunk.css",
+    "static/js/2.9ba84855.chunk.js",
+    "static/css/main.a919d2ef.chunk.css",
+    "static/js/main.ab061f1e.chunk.js"
+  ]
+}
