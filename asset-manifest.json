@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hmc-admin/static/css/main.a919d2ef.chunk.css",
-    "main.js": "/hmc-admin/static/js/main.ab061f1e.chunk.js",
-    "main.js.map": "/hmc-admin/static/js/main.ab061f1e.chunk.js.map",
-    "runtime-main.js": "/hmc-admin/static/js/runtime-main.aea6b924.js",
-    "runtime-main.js.map": "/hmc-admin/static/js/runtime-main.aea6b924.js.map",
+    "main.js": "/hmc-admin/static/js/main.e73de5fc.chunk.js",
+    "main.js.map": "/hmc-admin/static/js/main.e73de5fc.chunk.js.map",
+    "runtime-main.js": "/hmc-admin/static/js/runtime-main.af6a3a73.js",
+    "runtime-main.js.map": "/hmc-admin/static/js/runtime-main.af6a3a73.js.map",
     "static/css/2.97094cdd.chunk.css": "/hmc-admin/static/css/2.97094cdd.chunk.css",
-    "static/js/2.9ba84855.chunk.js": "/hmc-admin/static/js/2.9ba84855.chunk.js",
-    "static/js/2.9ba84855.chunk.js.map": "/hmc-admin/static/js/2.9ba84855.chunk.js.map",
-    "static/js/3.cb9503a6.chunk.js": "/hmc-admin/static/js/3.cb9503a6.chunk.js",
-    "static/js/3.cb9503a6.chunk.js.map": "/hmc-admin/static/js/3.cb9503a6.chunk.js.map",
+    "static/js/2.bbef28be.chunk.js": "/hmc-admin/static/js/2.bbef28be.chunk.js",
+    "static/js/2.bbef28be.chunk.js.map": "/hmc-admin/static/js/2.bbef28be.chunk.js.map",
+    "static/js/3.56bb2bed.chunk.js": "/hmc-admin/static/js/3.56bb2bed.chunk.js",
+    "static/js/3.56bb2bed.chunk.js.map": "/hmc-admin/static/js/3.56bb2bed.chunk.js.map",
     "static/js/4.176edec3.chunk.js": "/hmc-admin/static/js/4.176edec3.chunk.js",
     "static/js/4.176edec3.chunk.js.map": "/hmc-admin/static/js/4.176edec3.chunk.js.map",
     "static/js/5.800a944e.chunk.js": "/hmc-admin/static/js/5.800a944e.chunk.js",
@@ -19,18 +19,18 @@
     "index.html": "/hmc-admin/index.html",
     "static/css/2.97094cdd.chunk.css.map": "/hmc-admin/static/css/2.97094cdd.chunk.css.map",
     "static/css/main.a919d2ef.chunk.css.map": "/hmc-admin/static/css/main.a919d2ef.chunk.css.map",
-    "static/js/2.9ba84855.chunk.js.LICENSE.txt": "/hmc-admin/static/js/2.9ba84855.chunk.js.LICENSE.txt",
-    "static/js/3.cb9503a6.chunk.js.LICENSE.txt": "/hmc-admin/static/js/3.cb9503a6.chunk.js.LICENSE.txt",
+    "static/js/2.bbef28be.chunk.js.LICENSE.txt": "/hmc-admin/static/js/2.bbef28be.chunk.js.LICENSE.txt",
+    "static/js/3.56bb2bed.chunk.js.LICENSE.txt": "/hmc-admin/static/js/3.56bb2bed.chunk.js.LICENSE.txt",
     "static/js/4.176edec3.chunk.js.LICENSE.txt": "/hmc-admin/static/js/4.176edec3.chunk.js.LICENSE.txt",
     "static/js/5.800a944e.chunk.js.LICENSE.txt": "/hmc-admin/static/js/5.800a944e.chunk.js.LICENSE.txt",
     "static/media/banner.40cdce9b.png": "/hmc-admin/static/media/banner.40cdce9b.png",
     "static/media/profile.f5240ef5.jpg": "/hmc-admin/static/media/profile.f5240ef5.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.aea6b924.js",
+    "static/js/runtime-main.af6a3a73.js",
     "static/css/2.97094cdd.chunk.css",
-    "static/js/2.9ba84855.chunk.js",
+    "static/js/2.bbef28be.chunk.js",
     "static/css/main.a919d2ef.chunk.css",
-    "static/js/main.ab061f1e.chunk.js"
+    "static/js/main.e73de5fc.chunk.js"
   ]
 }
