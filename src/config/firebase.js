@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth"
+import "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyBr05pAUDy9ORxdzLVSPX312JQTjG1n9a8",
@@ -14,7 +16,6 @@ firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 export const db = firebase.firestore();
-export const storage = firebase.storage();
 export const ticketRef = db.collection("Ticket");
 
 export const foodsRef = db.collection("Food");
